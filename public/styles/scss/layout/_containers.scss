@@ -1,0 +1,52 @@
+@use '../abstract/colors';
+
+@mixin basic-container(
+    $direction: row,
+    $justify: center,
+    $align: center,
+    $wrap: wrap,
+    $border: none
+) {
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    border: $border;
+}
+
+$std-padding: 5px;
+$std-margin: 20px;
+$std-radius: 3px;
+$ext-radius: 10px;
+
+form {
+    display: flex;
+    flex: {
+      direction: column;
+    }
+    padding: 15px 0;
+  
+    input {
+      border: none;
+      border-bottom: solid 1px colors.$darker-snowy;
+      background-color: transparent;
+      padding: $std-padding;
+      font-family: inherit;
+      &:focus {
+        outline: none;
+        border-color: teal;
+      }
+    }
+    button {
+      margin-top: 15px;
+      border: solid 1px colors.$darker-snowy;
+      border-radius: $std-radius;
+      padding: $std-padding;
+      font-family: inherit;
+      &:hover {
+        background-color: colors.$grey;
+        cursor: pointer;
+      }
+    }
+  }

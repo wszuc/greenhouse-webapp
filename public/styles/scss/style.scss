@@ -1,0 +1,26 @@
+@use 'abstract/colors';
+@use 'typography/fonts';
+@use 'layout/containers';
+
+html, body{
+    background: {
+        image: colors.$background-gradient;
+        attachment: fixed;
+    }
+    font-family: fonts.$family;
+    height: 100vh;
+}
+
+.base-container{
+    @include containers.basic-container(column, center, center, wrap);
+    padding: containers.$std-padding;
+    height: 100%;
+
+    form{
+        border-style: solid;
+        border-width: 2px;
+        border-color: colors.$darker-snowy;
+        border-radius: containers.$ext-radius;
+        padding: containers.$std-padding;
+    }
+}
